@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "tf_state" {
 
 
 #creating test bucket
-resource "aws_s3_bucket" "tf_statetest bucket" {
+resource "aws_s3_bucket" "tf_statetest_bucket" {
   bucket = "dummy-terraform-state-bucket-test-7104"
 
   tags = {
