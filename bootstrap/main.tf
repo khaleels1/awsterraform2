@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "tf_state" {
-  bucket = "var.bucket_name"
+  bucket = var.bucket_name
 
   tags = {
     Name        = "Terraform State Bucket"
