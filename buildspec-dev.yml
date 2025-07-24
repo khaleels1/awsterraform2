@@ -14,4 +14,4 @@ phases:
       - echo "Running Terraform..."
       - cd envs/dev
       - terraform init -backend-config="bucket=terraform-state-bucket-prod-7104" -backend-config="dynamodb_table=terraform-locks-prod-7104"
-      - terraform apply -auto-approve
+      - terraform apply -auto-approve -var-file="dev.tfvars" 
