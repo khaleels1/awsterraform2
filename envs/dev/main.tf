@@ -1,13 +1,13 @@
-provider "aws" {
-  region     = local.region[var.env]
+# provider "aws" {
+#   region     = local.region[var.env]
     
-  // Use assume role for cross-account access
-  // This is the role that has been created in the target account
-  assume_role {
-    role_arn     = local.assume_role_arn
-    session_name = "TerraformSession-${var.env}"
-}
-}
+#   // Use assume role for cross-account access
+#   // This is the role that has been created in the target account
+#   assume_role {
+#     role_arn     = local.assume_role_arn
+#     session_name = "TerraformSession-${var.env}"
+# }
+# }
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "${var.env}-bucket-7104577518"
   tags = {
