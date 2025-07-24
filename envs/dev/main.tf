@@ -89,7 +89,7 @@ resource "aws_instance" "my_ec2_instance" {
   ami                         = "ami-020cba7c55df1f615" # Replace with a valid AMI ID
   instance_type               = var.instance_type
   availability_zone           = "${local.region[var.env]}a"
-  key_name                    = "my-key-pair"
+  key_name                    = var.public_ssh_key
   subnet_id                   = aws_subnet.Subnet.id
   vpc_security_group_ids      = [aws_security_group.SG.id]
   associate_public_ip_address = true

@@ -22,6 +22,10 @@ variable "private_subnet_cidr" {
   description = "CIDR block for the private subnet"
   type        = string
 }
+variable "public_ssh_key" {
+  description = "SSH key for public access"
+  type        = string  
+}
 
 variable "desktop_ips" {
   description = "List of desktop IPs allowed to access the resources"
