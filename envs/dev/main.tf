@@ -2,7 +2,6 @@ provider "aws" {
   region     = local.region[var.env]
   
 
-  
   // Use assume role for cross-account access
   // This is the role that has been created in the target account
   assume_role {
