@@ -1,13 +1,7 @@
 provider "aws" {
   region     = local.region[var.env]
-  //access_key = "AKIA22SLJMOC4GVWD672"
-  //secret_key = "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"
-  access_key = "AKIA22SLJMOCUUELGWWB"
-  secret_key = "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"
-  # Need to move these to separate file or to AWS codebuild or secrets manager
-  # Uses central-admin credentials from local profile or env vars
-  # shared_credentials_file = "~/.aws/credentials"
-  # profile                 = "central-admin"
+  
+
   
   // Use assume role for cross-account access
   // This is the role that has been created in the target account
