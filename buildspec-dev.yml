@@ -1,0 +1,12 @@
+# buildspec-dev.yml
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      terraform: 1.8
+  build:
+    commands:
+      - cd envs/dev
+      - terraform init -backend-config="bucket=terraform-state-bucket-prod-7104" -backend-config="dynamodb_table=terraform-locks-prod-7104"
+      - terraform apply -auto-approve
