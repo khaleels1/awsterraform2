@@ -89,7 +89,7 @@ resource "aws_instance" "my_ec2_instance" {
   ami                         = "ami-020cba7c55df1f615" # Replace with a valid AMI ID
   instance_type               = var.instance_type
   availability_zone           = "${local.region[var.env]}a"
-  key_name                    = var.public_ssh_key
+  key_name                    = "my-key-pair"
   subnet_id                   = aws_subnet.Subnet.id
   vpc_security_group_ids      = [aws_security_group.SG.id]
   associate_public_ip_address = true
@@ -103,7 +103,7 @@ resource "aws_instance" "my_ec2_instance" {
 }
 resource "aws_key_pair" "my_key_pair" {
   key_name   = "my-key-pair"
-  public_key = file("~/.ssh/id_ed25519.pub") # Replace with the path to your public key
+  public_key = var.public_ssh_key # Replace with the path to your public key
 }
 data "aws_caller_identity" "current" {
 
